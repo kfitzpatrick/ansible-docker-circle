@@ -1,0 +1,7 @@
+---
+- name: Sample Play
+  hosts: all
+  tasks:
+  - file: path=/foo state=directory
+  - file: path=/foo/test.txt state=absent
+
