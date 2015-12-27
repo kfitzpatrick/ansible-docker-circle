@@ -3,5 +3,5 @@
   hosts: all
   tasks:
   - file: path=/foo state=directory
-  - file: path=/foo/test.txt state=touch
+  - file: path=/foo/testfile.txt state=touch
 
