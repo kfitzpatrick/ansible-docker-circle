@@ -1,0 +1,14 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker version
+    - docker build  -t test-box .
+
+test:
+  override:
+    - sh -c ./test.sh 
+
