@@ -3,10 +3,16 @@ machine:
     - docker
 
 dependencies:
+  cache_directories:
+    - "~/docker"
   override:
     - docker info
     - docker version
-    - docker build  -t test-box .
+    - if [[ -e ~/docker/image.tar ]]; then docker load -i ~/docker/image.tar; fi
+    - docker build --rm=false -t testbox .
+    #TODO: we should only do this on a successful build.
+    #TODO: make sure we're actually using the cached image.
+    - mkdir -p ~/docker; docker save testbox > ~/docker/image.tar
 
 test:
   override:
