@@ -41,6 +41,7 @@ The following Dockerfile is very simple and effectively just runs the playbooks 
 It uses the Ansible docker image from William Yeh. See more: 
 
 https://hub.docker.com/r/williamyeh/ansible/
+
 https://github.com/William-Yeh/docker-ansible
 
 ```
